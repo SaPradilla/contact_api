@@ -6,13 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.upload = void 0;
 // Importacion de cloudinary
 const cloudinary_1 = require("cloudinary");
+const envs_1 = require("../../config/envs");
 // Importar Multer
 const multer_1 = __importDefault(require("multer"));
 // Configuracion del cloundinary
 cloudinary_1.v2.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET,
+    cloud_name: envs_1.envs.CLOUD_NAME,
+    api_key: envs_1.envs.API_KEY,
+    api_secret: envs_1.envs.API_SECRET,
 });
 // Metodo para configurar la imagen
 // Almacenamiento en memoria, ya que Cloudinary lo necesita así

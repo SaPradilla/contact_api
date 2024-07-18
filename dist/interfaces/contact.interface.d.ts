@@ -46,6 +46,7 @@ export interface Image {
     size: number;
 }
 export interface IcontactModel extends Document {
+    id: number;
     email: string;
     first_name: string;
     last_name: string;

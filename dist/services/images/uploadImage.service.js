@@ -6,11 +6,10 @@ async function uploadImages(image) {
     try {
         // Subir la imagen
         const img = await (0, upload_cloudinary_service_1.uploadCloudinary)(image);
-        console.log(img);
         return img;
     }
     catch (error) {
-        new Error('Error al subir las imágenes a Cloudinary', error);
+        throw new Error('Error al subir las imágenes a Cloudinary', error.message);
     }
 }
 exports.uploadImages = uploadImages;

@@ -31,6 +31,10 @@ const mongoose_1 = __importStar(require("mongoose"));
 const mongoose_sequence_1 = __importDefault(require("mongoose-sequence"));
 const AutoIncrement = (0, mongoose_sequence_1.default)(mongoose_1.default);
 const ContactSchema = new mongoose_1.Schema({
+    id: {
+        type: Number,
+        unique: true,
+    },
     email: {
         type: String,
         required: true,
@@ -52,7 +56,7 @@ const ContactSchema = new mongoose_1.Schema({
         type: Boolean,
         default: false
     }
-}, { _id: false });
+});
 ContactSchema.plugin(AutoIncrement, { inc_field: 'id' });
 exports.ContactModel = mongoose_1.default.model('Contacts', ContactSchema);
 //# sourceMappingURL=contact.model.js.map
